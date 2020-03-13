@@ -4,11 +4,6 @@ namespace Omnipay\Rabobank\Message\Response;
 
 class CompletePurchaseResponse extends AbstractRabobankResponse
 {
-    public function isSuccessful()
-    {
-        return isset($this->data['status']) && $this->data['status'] === 'COMPLETED';
-    }
-
     public function isCancelled()
     {
         return isset($this->data['status']) && $this->data['status'] === 'CANCELLED';
